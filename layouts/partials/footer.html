@@ -1,28 +1,13 @@
-<footer>
-  <!-- 其他网站 -->
-  <div></div>
-  <p class="copyright">
-    {{with .Site.Copyright}}{{.}} / {{end}}
-    <span> 由&nbsp;<a href="https://gohugo.io" target="_blank">Hugo</a>&nbsp;强力驱动 </span>
-    <span>&nbsp;|&nbsp;</span>
-    <span
-      >主题&nbsp;-
-      <a href="https://github.com/faeli/hugo-theme-zero/" target="_blank"
-        >Zero</a
-      >
-    </span>
-  </p>
-</footer>
-{{ if isset .Site.Params.Statis "baidusiteid" }}
-<!-- Baidu tongji -->
-<script type="text/javascript">
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.Statis.BaiduSiteId }}";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-<!-- Baidu tongji -->
-{{ end }}
+<!-- 其他网站 -->
+<div></div>
+<p class="copyright">
+  {{with .Site.Copyright}}{{.}} / {{end}}
+  <span>
+    由&nbsp;<a href="https://gohugo.io" target="_blank">Hugo</a>&nbsp;强力驱动
+  </span>
+  <span>&nbsp;|&nbsp;</span>
+  <span
+    >主题&nbsp;-
+    <a href="https://github.com/faeli/hugo-theme-zero/" target="_blank">Zero</a>
+  </span>
+</p>

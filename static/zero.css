@@ -365,25 +365,74 @@ body a {
 body a:hover {
   color: #fba416;
 }
-
-header {
+.header-inner {
+  height: 58px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
   border-bottom: 2px solid rgb(230, 35, 120);
-  padding: 20px;
   background-color: rgb(230, 35, 120);
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.5em;
 }
-header a {
+.header-inner a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-header a:hover {
+.header-inner a:hover {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-#body-container article {
+#post-header {
+  display: none;
+}
+.header-wrap  {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-wrap .title {
+  margin: auto 20px;
+}
+.header-band {
+  height: 58px;
+  display: block;
+}
+.main-inner {
+  display: flex;
+  align-items: top;
+  flex-direction: row;
+  background-color: rgb(245, 247, 249);
+  width: 100%;
+}
+.main-inner .content-wrap {
+  width: 61.8%;
+  flex: 1;
+}
+.main-content {
   padding: 20px;
-  min-height: 400px;
+  background-color: #FFF;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.main-inner aside {
+  width: 40.2%;
+  min-width: 288px;
+  position: relative;
+}
+.sidebar-inner {
+  padding: 20px;
+  position: fixed;
+}
+.sidebar-wrap {
+  background-color: #FFF;
+  padding: 20px;
+  margin-bottom: 25px;
 }
 footer {
   padding: 20px;
@@ -407,9 +456,14 @@ footer a:hover {
   color: rgba(0, 0, 0, 0.3);
 }
 
+/* fix 滚动条 */
 .highlight pre {
   padding: 15px;
   border-radius: 6px;
+  overflow-x: auto;
+}
+.post-body pre {
+  overflow-x: auto;
 }
 
 /* 文章分页 */
@@ -444,4 +498,14 @@ article .paginate .next {
 /* 赞赏，支持 */
 #post-donate div {
   text-align: center;
+}
+.donate-message {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+/* 赞赏方式 */
+.donate-way {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

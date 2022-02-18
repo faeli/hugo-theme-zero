@@ -4,10 +4,8 @@
   <h2 id="post-title">{{ .Title }}</h2>
   <!--文章 mate-->
   {{ partial "post/mate.html" . }}
-  <!--文章目录 TOC-->
-  <section id="post-toc">{{ .TableOfContents }}</section>
   <!--文章内容-->
-  <div class="content">{{ .Content }}</div>
+  <div class="post-body">{{ .Content }}</div>
   <!-- 文章版权 -->
   {{ partial "widgets/copyright.html" . }}
   <!-- 打赏 -->
@@ -18,5 +16,5 @@
   {{ partial "widgets/prevnext.html" . }}
   <!--关联文章-->
   {{ partial "widgets/related.html" . }}
-</article>
+</section>
 {{ end }}

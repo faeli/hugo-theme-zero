@@ -1,0 +1,14 @@
+<script src="/js/zero.js"></script>
+{{ if isset .Site.Params.Statis "baidusiteid" }}
+<!-- Baidu tongji -->
+<script type="text/javascript">
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.Statis.BaiduSiteId }}";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<!-- Baidu tongji -->
+{{ end }}

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" dir="{{ $.Param "contentdir" | default "zh" }}">
+<html lang="{{ .Site.Language.Lang }}" dir="{{ $.Param " contentdir" | default "zh" }}">
+
+<head>
   {{- partial "head.html" . -}}
-  <body>
-    {{- partial "header.html" . -}}
-    <section id="body-container">
-      <div>{{- block "main" . }}{{- end }}</div>
-    </section>
-    {{- partial "footer.html" . -}}
-  </body>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      {{- partial "header.html" . -}}
+    </div>
+    <div class="header-band"></div>
+  </header>
+  <main id="main">
+    <div class="main-inner">
+      <div class="content-wrap">
+        <div id="main-content" class="main-content">{{- block "main" . }}{{- end }}</div>
+      </div>
+      {{- partial "sidebar.html" . -}}
+    </div>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+      {{- partial "footer.html" . -}}
+    </div>
+  </footer>
+  {{- partial "script.html" . -}}
+</body>
+
 </html>

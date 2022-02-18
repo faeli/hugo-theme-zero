@@ -1,6 +1,14 @@
-<header>
-<!--Site Title-->
-<a href="{{ "" | relLangURL}}">{{site.Title}}</a>
-<!--Sub-title-->
-{{with site.Params.subtitle}} &nbsp;|&nbsp; {{.}}{{end}}
-</header>
+<div id="site-header" class="header-wrap">
+    <div class="title">
+        <!--Site Title-->
+        <a href="{{ "" | relLangURL}}">{{site.Title}}</a>
+        <!--Sub-title-->
+        {{with site.Params.subtitle}} &nbsp;|&nbsp; {{.}}{{end}}
+    </div>
+</div>
+{{ if .IsHome }}
+{{ else }}
+<div id="post-header" class="header-wrap">
+    <div class="title">{{ .Title }}</div>
+</div>
+{{ end }}
