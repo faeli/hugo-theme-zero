@@ -1,0 +1,37 @@
+<div class="post-meta">
+<!-- 发布时间 -->
+   <span class="post-date"> {{.Date.Format "2006-01-02"}}</span>
+<!-- 分类 -->
+{{ if isset .Params "categories" }}
+{{ if not (eq (len .Params.categories) 0) }}
+  <span class="post-category" >
+  {{ range .Params.categories }}
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" itemprop="url" rel="index">
+        <span itemprop="name">{{ . }}</span>
+      </a>
+      &nbsp; 
+    </span>
+  {{ end }}
+</span>
+{{ end }}
+{{ end }}
+<!-- 标签 -->
+{{ if isset .Params "tags" }}
+{{ if not (eq (len .Params.tags) 0) }} 
+<span class="post-tags">     
+    {{ range .Params.tags }}
+    <span class="post-tag">
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}" rel="tag" title="{{ . }}">#{{ . }}#</a>
+    </span>
+    {{ end }}
+</span>
+{{ end }}
+{{ end }}
+<!-- 字数 -->
+<span class="post-count">{{ .WordCount }}</span>
+<!-- 阅读时常 -->
+<span class="post-readtime">
+    {{ .ReadingTime }}
+</span>
+</div>

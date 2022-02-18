@@ -1,0 +1,12 @@
+description = "Zero of hugo theme"
+features    = []
+homepage    = "https://zero.faeli.me/"
+license     = "MIT"
+licenselink = "https://github.com/faeli/hugo-theme-zero/blob/master/LICENSE"
+min_version = "0.1.0"
+name        = "Zero"
+tags        = ["clean", "simple"]
+
+[author]
+homepage = "https://faeli.me/"
+name     = "大个子斌斌子"

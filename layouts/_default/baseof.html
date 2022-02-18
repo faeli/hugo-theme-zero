@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ $.Param "contentdir" | default "zh" }}">
+  {{- partial "head.html" . -}}
+  <body>
+    {{- partial "header.html" . -}}
+    <section id="body-container">
+      <div>{{- block "main" . }}{{- end }}</div>
+    </section>
+    {{- partial "footer.html" . -}}
+  </body>
+</html>
