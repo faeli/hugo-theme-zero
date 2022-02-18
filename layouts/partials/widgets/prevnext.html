@@ -1,0 +1,16 @@
+<div class="paginate">
+  <!--上一页/小一页-->
+  {{with .PrevInSection}}
+  <div class="prev">
+    <b>&lt;</b>
+    <a href="{{.RelPermalink}}">{{.Title}}</a>
+  </div>
+  {{end}}
+  <div class="paginate-divider"></div>
+  {{with .NextInSection}}
+  <div class="next">
+    <a href="{{.RelPermalink}}">{{.Title}}</a>
+    <b>&gt;</b>
+  </div>
+  {{end}}
+</div>

@@ -389,7 +389,7 @@ footer {
   padding: 20px;
   text-align: center;
   color: #243b65;
-  background-color: rgb(248, 249, 252);
+  background-color: rgb(249, 249, 249);
 }
 footer a {
   color: #243b65;
@@ -412,8 +412,9 @@ footer a:hover {
   border-radius: 6px;
 }
 
+/* 文章分页 */
 article .paginate {
-  border-top: 1px solid rgb(248, 249, 252);
+  border-top: 1px solid rgb(249, 249, 249);
   margin-top: 10px;
   padding-top: 10px;
   display: flex;
@@ -429,4 +430,18 @@ article .paginate .paginate-divider {
 article .paginate .next {
   display: inline-block;
   text-align: right;
+}
+
+/* 文章版权 */
+#post-copyright dl{
+  padding: 8px 16px;
+  border-left: 3px solid rgb(230, 35, 120);
+  background-color: rgb(249, 249, 249);
+}
+#post-copyright dl dt {
+  margin: 8px auto;
+}
+/* 赞赏，支持 */
+#post-donate div {
+  text-align: center;
 }

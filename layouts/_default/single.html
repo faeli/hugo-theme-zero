@@ -1,58 +1,22 @@
-{{define "main"}}
+{{ define "main" }}
 <article>
   <!--文章标题-->
-  <h2>{{.Title}}</h2>
-
-  <!--文章字段-->
-  <div class="ext-info">
-    <!-- 发布时间 -->
-    <span class="date">{{.Date.Format "2006-01-30"}}</span>
-    <!-- 文字数 -->
-    <span class="world-count">{{ .WordCount }}</span>
-    <!-- 阅读时常 -->
-    <span class="view-count">{{ .ReadingTime }}</span>
-  </div>
-
-  <!--TOC-->
-  {{.TableOfContents}}
-
+  <h2 id="post-title">{{ .Title }}</h2>
+  <!--文章 mate-->
+  {{ partial "post/mate.html" . }}
+  <!--文章目录 TOC-->
+  <section id="post-toc">{{ .TableOfContents }}</section>
   <!--文章内容-->
-  <div class="content">{{.Content}}</div>
+  <div class="content">{{ .Content }}</div>
+  <!-- 文章版权 -->
+  {{ partial "widgets/copyright.html" . }}
+  <!-- 打赏 -->
+  {{ partial "widgets/donate.html" .}}
   <!--文章标签-->
-  <div class="tags">
-    <ul>
-      {{range (.GetTerms "tags")}}
-      <li><a href="{{.RelPermalink}}">{{.LinkTitle}}</a></li>
-      {{end}}
-    </ul>
-  </div>
-
-  <div class="paginate">
-    <!--上一页/小一页-->
-    {{with .PrevInSection}}
-    <div class="prev">
-      <b>&lt;</b>
-      <a href="{{.RelPermalink}}">{{.Title}}</a>
-    </div>
-    {{end}}
-    <div class="paginate-divider"></div>
-    {{with .NextInSection}}
-    <div class="next">
-      <a href="{{.RelPermalink}}">{{.Title}}</a>
-      <b>&gt;</b>
-    </div>
-    {{end}}
-  </div>
+  {{ partial "widgets/tags.html" . }}
+  <!-- Prev/Next 文章 -->
+  {{ partial "widgets/prevnext.html" . }}
   <!--关联文章-->
-  {{$related := .Site.RegularPages.Related . | first 5}} {{with $related}}
-  <div class="related">
-    <h3>See Also</h3>
-    <ul>
-      {{range .}}
-      <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-      {{end}}
-    </ul>
-  </div>
-  {{end}}
+  {{ partial "widgets/related.html" . }}
 </article>
-{{end}}
+{{ end }}
