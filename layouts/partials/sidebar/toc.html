@@ -1,6 +1,7 @@
 {{ if isset .Params "toc" }} {{with .TableOfContents}}
-<section class="sidebar-wrap">
+<section class="sidebar-wrap affix">
   <div class="post-toc">
+    <div class="title">目录</div>
     <div class="post-toc-content">{{.}}</div>
   </div>
 </section>

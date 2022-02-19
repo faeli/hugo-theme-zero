@@ -1,37 +1,47 @@
-<div class="post-meta">
-<!-- 发布时间 -->
-   <span class="post-date"> {{.Date.Format "2006-01-02"}}</span>
-<!-- 分类 -->
-{{ if isset .Params "categories" }}
-{{ if not (eq (len .Params.categories) 0) }}
-  <span class="post-category" >
-  {{ range .Params.categories }}
-    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+<div class="post-mate">
+  <!-- 发布时间 -->
+  <span class="post-date">
+    {{- partial "inline-svg" "calendar" -}}
+    <time>
+      {{.Date.Format "2006-01-02"}}
+    </time>
+  </span>
+  <!-- 分类 -->
+  {{ if isset .Params "categories" }}
+  {{ if not (eq (len .Params.categories) 0) }}
+  <span class="post-category">
+    {{- partial "inline-svg" "folder" -}}
+    {{ range .Params.categories }}
+    <span>
       <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" itemprop="url" rel="index">
-        <span itemprop="name">{{ . }}</span>
+        {{ . }}
       </a>
-      &nbsp; 
-    </span>
-  {{ end }}
-</span>
-{{ end }}
-{{ end }}
-<!-- 标签 -->
-{{ if isset .Params "tags" }}
-{{ if not (eq (len .Params.tags) 0) }} 
-<span class="post-tags">     
-    {{ range .Params.tags }}
-    <span class="post-tag">
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}" rel="tag" title="{{ . }}">#{{ . }}#</a>
+      &nbsp;
     </span>
     {{ end }}
-</span>
-{{ end }}
-{{ end }}
-<!-- 字数 -->
-<span class="post-count">{{ .WordCount }}</span>
-<!-- 阅读时常 -->
-<span class="post-readtime">
-    {{ .ReadingTime }}
-</span>
+  </span>
+  {{ end }}
+  {{ end }}
+  <!-- 标签 -->
+  {{ if isset .Params "tags" }}
+  {{ if not (eq (len .Params.tags) 0) }}
+  <span class="post-tags">
+    {{- partial "inline-svg" "tags" -}}
+    {{ range .Params.tags }}
+    <span class="post-tag">
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}" rel="tag" title="{{ . }}">#{{ . }}&nbsp;</a>
+    </span>
+    {{ end }}
+  </span>
+  {{ end }}
+  {{ end }}
+  <!-- 字数 -->
+  <span class="post-count">
+    {{- partial "inline-svg" "pencil" -}}
+    {{ .WordCount }}字</span>
+  <!-- 阅读时常 -->
+  <span class="post-readtime">
+    {{- partial "inline-svg" "clock" -}}
+    ≈{{ .ReadingTime }}
+  </span>
 </div>

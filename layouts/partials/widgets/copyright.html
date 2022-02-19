@@ -1,7 +1,8 @@
+{{ if .Title }}
 <section id="post-copyright">
   <dl>
     <dt><span>本文链接：</span>{{ .Page.Permalink }}</dt>
-    <dt><span>本文作者：</span>{{ .Site.Params.Author }}</dt>
+    <dt><span>本文作者：</span>{{ .Site.Params.Author.name }}</dt>
     <dt>
       <span>版权声明：</span>本博客文章除特别声明外，均采用
       <a
@@ -13,3 +14,4 @@
     </dt>
   </dl>
 </section>
+{{ end }}

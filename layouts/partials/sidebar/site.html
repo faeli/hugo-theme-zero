@@ -4,8 +4,8 @@
     <div class="site-logo">
       <img width="96" src="/images/logo.png" />
     </div>
-    <div><strong>{{ .Site.Title }}</strong></div>
-    {{with site.Params.subtitle}}
+    <div><strong>{{ if .Site.Params.Author.name }} {{ .Site.Params.Author.name }}{{ else }} {{ .Site.Title }} {{ end }}</strong></div>
+    {{with .Site.Params.subtitle}}
     <p>{{.}}</p>
     {{end}}
     <div class="site-statis">
@@ -22,5 +22,29 @@
         <div><small>标签</small></div>
       </div>
     </div>
+    <div class="site-rss">
+      <a href="/index.xml" target="_black">{{- partial "inline-svg" "rss" -}}&nbsp;&nbsp;RSS&nbsp;订阅</a>
+    </div>
+    <!-- 作者链接 -->
+    {{ if .Site.Params.Author.links }}
+    <div class="author-link-wrap">
+      {{ range .Site.Params.Author.links }}
+      <div class="author-link">
+        <a href="{{ .url }}" target="_black">{{ .name }}</a>
+      </div>
+      {{ end }}
+    </div>
+    {{ end}}
+    <!-- 友情链接 -->
+    {{ if .Site.Params.Friend.links }}
+    <div class="site-link-wrap">
+      <div>友情链接</div>
+      {{ range .Site.Params.Friend.links }}
+      <div class="site-link">
+        <a href="{{ .url }}" target="_black">{{ .name }}</a>
+      </div>
+      {{ end }}
+    </div>
+    {{ end}}
   </div>
 </section>

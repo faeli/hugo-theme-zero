@@ -1,0 +1,20 @@
+.post-mate {
+    font-size: 12px;
+    margin: auto -4px;
+    span {
+        color: rgba(0,0,0,.7);
+        margin: 0px 4px;
+        i {
+            color: rgba(0,0,0,.5);
+        }
+        span {
+            margin: 0px 3px;
+            &:first-child {
+                margin-left: 0px;
+            }
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+}
