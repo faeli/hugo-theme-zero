@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >{{ .Title }}
+    <small>分类</small>
+    </h2>
+</div>
+{{ range (.Paginate (.Data.Pages.GroupByDate "2006") 15 ).PageGroups  }}
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-{{ .Key }}">{{ .Key }}</h2>
+</div>
+{{ partial "post/simple_list.html" . }}
+{{ end }}
+ </section>
+{{ partial "pagination.html" . }}
+{{ end }}

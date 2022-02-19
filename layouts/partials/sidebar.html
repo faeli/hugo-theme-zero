@@ -1,5 +1,6 @@
 <aside id="sidebar" class="sidebar">
+  <section class="sidebar-wrap">{{ partial "sidebar/nav.html" . }}</section>
   <div class="sidebar-inner">
-    {{ partial "sidebar/toc.html" . }}
+    {{ partial "sidebar/toc.html" . }} {{ partial "sidebar/site.html" . }}
   </div>
 </aside>

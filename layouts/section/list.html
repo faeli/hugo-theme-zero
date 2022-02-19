@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+    <span class="archive-page-counter">
+   {{ (len (where .Site.RegularPages "Section" "post")) }}
+    </span>
+{{ range (.Paginate (.Data.Pages.GroupByDate "2006") 15 ).PageGroups  }}
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-{{ .Key }}">{{ .Key }}</h2>
+</div>
+{{ partial "post/simple_list.html" . }}
+{{ end }}
+ </section>
+{{ partial "pagination.html" . }}
+{{ end }}
