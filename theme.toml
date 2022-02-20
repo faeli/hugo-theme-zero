@@ -10,3 +10,5 @@ tags        = ["clean", "simple"]
 [author]
 homepage = "https://faeli.me/"
 name     = "大个子斌斌子"
+[markup.highlight]
+style = "github"
