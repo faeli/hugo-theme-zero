@@ -19,9 +19,10 @@
   {{ $.Scratch.Set "begin" $begin }}
 {{ end }}
 {{ $begin := $.Scratch.Get "begin"}}
-
-<nav class="pagination">
-    {{ if $pag.HasPrev }}<a class="extend prev" rel="prev" href="{{ $pag.Prev.URL  }}"><i class="fa fa-angle-left"></i></a>{{ end }}
+{{ if gt $tps 1 }}
+<div class="pagination">
+    {{ if $pag.HasPrev }}<a class="prev" rel="prev" href="{{ $pag.Prev.URL  }}" title="上一页">&lt;</a>{{ end }}
+    <div class="pager">
     {{ range $p := $pag.Pagers }}
         {{ if and (ge $p.PageNumber $begin) (le $p.PageNumber $end) }}
         {{ if eq $p $pag }}
@@ -31,5 +32,7 @@
         {{ end }}
         {{ end }}
     {{ end }}
-    {{ if $pag.HasNext }}<a class="extend next" rel="next" href="{{ $pag.Next.URL }}"><i class="fa fa-angle-right"></i></a>{{ end }}
-</nav>
+    </div>
+    {{ if $pag.HasNext }}<a class="next" rel="next" href="{{ $pag.Next.URL }}" title="下一页">&gt;</a>{{ end }}
+    </div>
+{{ end }}

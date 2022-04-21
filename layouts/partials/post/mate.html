@@ -44,4 +44,9 @@
     {{- partial "inline-svg" "clock" -}}
     ≈{{ .ReadingTime }}
   </span>
+  {{ with .Draft }}
+  <span>
+    <b>草稿</b>
+  </span>
+  {{ end }}
 </div>
