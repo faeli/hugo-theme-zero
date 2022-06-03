@@ -1,0 +1,20 @@
+.pagination {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    .pager {
+        flex: 1;
+        text-align: center;
+        .page-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 9px;
+            line-height: 28px;
+            &.current {
+                color:  #fba416;
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}
