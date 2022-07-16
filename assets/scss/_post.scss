@@ -1,23 +1,69 @@
 .post-mate {
-    font-size: 12px;
-    margin: auto -4px;
-    span {
-        color: rgba(0,0,0,.7);
-        margin: 0px 4px;
-        i {
-            color: rgba(0,0,0,.5);
-        }
-        span {
-            margin: 0px 3px;
-            &:first-child {
-                margin-left: 0px;
-            }
-            &:last-child {
-                margin-right: 0px;
-            }
-        }
+  font-size: 12px;
+  margin: auto -4px;
+  span {
+    color: var(--color-front-primary);
+    margin: 0px 4px;
+    i {
+      color: var(--color-front-primary);
     }
+    span {
+      margin: 0px 3px;
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
 }
+#post-title {
+  color: var(--color-text-secondary);
+}
+/* 文章版权 */
+#post-copyright dl {
+  padding: 8px 16px;
+  border-left: 3px solid rgb(230, 35, 120);
+  background-color: rgb(249, 249, 249);
+  color: rgba(0, 0, 0, 0.8);
+}
+#post-copyright dl dt {
+  margin: 8px auto;
+}
+/* 赞赏，支持 */
+#post-donate div {
+  text-align: center;
+}
+.donate-message {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+/* 赞赏方式 */
+.donate-way {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .post-body {
-    padding: 20px 0px;
+  padding: 20px 0px;
+}
+/* 日志目录 */
+.post-toc .title {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #808080;
+}
+.post-toc-content ul {
+  padding: 0px 2px 5px 10px;
+  margin: 0px;
+  text-align: left;
+  font-size: 14px;
+}
+.post-toc-content li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.6;
 }
