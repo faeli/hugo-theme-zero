@@ -6,14 +6,6 @@
             <span itemprop="name">{{ .Title }}</span>
         </a>
       </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="{{ .Date.Format "2006-01-02" }}"
-              content="{{ .Date.Format "01-02" }}" >
-          {{ .Date.Format "01-02" }}
-        </time>
-      </div>
     </header>
   </article>
 {{end}}

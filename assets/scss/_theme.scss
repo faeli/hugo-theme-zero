@@ -53,6 +53,7 @@
     --color-attention-subtle: rgba(187, 128, 9, 0.15);
     --color-danger-fg: #f85149;
   }
+  @import "github_syntax_dark";
 }
 
 @media (prefers-color-scheme: light) {
@@ -60,7 +61,7 @@
     color-scheme: light;
     --color-bg-primary: rgb(245, 247, 249);
     --color-bg-secondary: #fff;
-    --color-priamry: rgb(230, 35, 120);
+    --color-primary: rgb(230, 35, 120);
     --color-text-primary: rgba(230, 35, 120, 0.9);
     --color-text-secondary: rgba(0, 0, 0, 0.5);
     --color-front-primary: rgba(0, 0, 0, 0.5);
@@ -110,4 +111,7 @@
     --color-attention-subtle: #fff8c5;
     --color-danger-fg: #cf222e;
   }
+  @import "github_syntax";
 }
+// @import "monokai_syntax";
+

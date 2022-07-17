@@ -1,3 +1,21 @@
+ul.post-list {
+  margin: 0px;
+  padding: 0px;
+  li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    .post-item {
+        h4 {
+            margin: 0px;
+        }
+        .post-mate {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+    }
+  }
+}
 .post-mate {
   font-size: 12px;
   margin: auto -4px;
@@ -25,7 +43,7 @@
 #post-copyright dl {
   padding: 8px 16px;
   border-left: 3px solid var(--color-text-primary);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
   color: var(--color-front-primary);
 }
 #post-copyright dl dt {
@@ -66,4 +84,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: 1.6;
+}
+.posts-wrapper {
+  margin-bottom: 40px;
+  .post-title {
+    font-size: 1.1em;
+  }
+  .collection-title {
+    .archive-year {
+      font-size: 1.1em;
+    }
+  }
 }
