@@ -54,7 +54,7 @@
 {{ $style := resources.Get "scss/zero.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <!-- Google AdSense -->
-{{ if isset .Site.Params.Ad "googleid" }}
+{{ if .Site.Params.Ad.googleid }}
 <script data-ad-client="{{.Site.Params.Ad.googleid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end }}
 </head>
